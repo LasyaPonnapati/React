@@ -1,22 +1,7 @@
-/* <div class="parent">
-    <div class="child">
-        <h1>i'am h1 tag</h1>
-        <h2>i'am h1 tag</h2>
-    </div>
-    <div class="child2">
-        <h1>i'am h1 tag</h1>
-        <h2>i'am h1 tag</h2>
-    </div>
-</div> */
+import React from "react";
+import  ReactDOM from "react-dom/client";
 
-let heading = React.createElement("div",{className:"parent"},
-[React.createElement("div",{className:"child"},[
-   React.createElement("h1",{},"i'am h1 tag"),
-   React.createElement("h2",{},"i'am h2 tag")
-]),
-React.createElement("div",{className:"child2"},[
-    React.createElement("h1",{},"i'am h1 tag"),
-    React.createElement("h2",{},"i'am h2 tag")
- ])]);
+let heading = React.createElement("h1",{id:"heading"},"lasya");
 let root = ReactDOM.createRoot(document.getElementById("root"));
+console.log(root);
 root.render(heading);
