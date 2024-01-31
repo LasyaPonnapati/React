@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
 const Header = () => (
-    <div className="flex">
+    <div className="flex justify-between shadow-md">
 
-        <div className="logo">
+        <div className="flex">
             <img src={require("/images/main-logo.png")}alt="logo" />
             <p>tomato</p>
         </div>
 
         <div className="nav-items">
-            <ul>
+            <ul className="flex">
                 <li className="li-items"><Link to="/" className="links">Home</Link></li>
                 <li className="li-items"><Link to="/about" className="links">About us</Link></li>
                 <li className="li-items"><Link to="/contact" className="links">Contact us</Link></li>
