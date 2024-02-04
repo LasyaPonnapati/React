@@ -12,7 +12,6 @@ export const useResdetails=(resId)=>{
     const fetchmenu = (async () => {
         const data = await fetch(`${MENU_URL}${resId}`);
         const json = await data.json();
-        console.log(json);
         setResInfo(json?.data);
     });
 

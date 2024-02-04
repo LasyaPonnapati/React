@@ -4,6 +4,8 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { BODY_URL } from "../utils/constants";
 import HOC from "./HOC";
+// import { UserContext } from "../utils/UserContext";
+// import { useContext } from "react";
 
 const Body = () => {
     const [list, setList] = useState([]);
@@ -11,19 +13,20 @@ const Body = () => {
 
     const [searchText, setSearchText] = useState("");
 
-    console.log(list);
+    // const{userName,setUserInfo}=useContext(UserContext);
+
+    // console.log(list);
 
     const fetchData=async()=>{
         let data= await fetch(BODY_URL);
         let json=await data.json();
-        console.log(json);
+        // console.log(json);
         setList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants ?? []);//optional chaining
         setFilteredList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants ?? []);
     }
 
     useEffect(()=>{
         fetchData();
-        console.log("useeffect called");
     },[]);
 
     const IsOpen=HOC(Rescard);
@@ -40,6 +43,8 @@ const Body = () => {
                     const searchFiltered = list.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                     setFilteredList(searchFiltered);            
                 }}>search</button>
+                {/* <input className="border border-black p-2" value={userName} onChange={(e)=>setUserInfo(e.target.value)
+                }/> */}
             </div>
 
             <div className="ml-[150px]">
