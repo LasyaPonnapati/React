@@ -14,7 +14,7 @@ import appStore from "./utils/appStore.js";
 import Cart from "./components/Cart.js";
 
 const Grocery = lazy(()=>import("./components/Grocery.js"));
-const cart=lazy(()=>import("./components/Cart.js"))
+const Cart=lazy(()=>import("./components/Cart.js"));
     
 const App = () => {
 
@@ -25,6 +25,8 @@ const App = () => {
     //     };
     //     setUserInfo(data.name);
     // },[])
+
+    appStore.subscribe(()=>console.log(appStore.getState()));
     
     return(
         // <UserContext.Provider value={{userName:userInfo,setUserInfo}}>

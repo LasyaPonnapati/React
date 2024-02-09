@@ -18,10 +18,11 @@ const ResDetails = () => {
     const { name, cuisines, areaName, avgRating, totalRatingsString, costForTwoMessage } = resInfo?.cards[0]?.card?.card?.info;
     const { deliveryTime } = resInfo?.cards[0]?.card?.card?.info?.sla;
     const offers = resInfo?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers;
-    const itemCards=resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
+    const itemCards=resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
     const recomcategory=itemCards.filter((category)=>{
         return category?.card?.card?.['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
     });
+    console.log(recomcategory);
     const reqcategories=itemCards.filter((category)=>{
         return category?.card?.card?.['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";
     });

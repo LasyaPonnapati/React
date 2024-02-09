@@ -1,4 +1,4 @@
-import Rescard,{HOC} from "./Rescard";
+import Rescard from "./Rescard";
 import {useEffect, useState} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -35,7 +35,7 @@ const Body = () => {
         <div className="py-20">
 
             <div className="flex justify-center mx-5 mt-14 mb-20">
-                <input placeholder="Search for food or restaurant" className="w-120 h-12 bg-gray-200 pl-4 mr-2 rounded-full focus:outline-none" 
+                <input placeholder="Search for food or restaurant" data-testid="searchInput" className="w-120 h-12 bg-gray-200 pl-4 mr-2 rounded-full focus:outline-none" 
                 value={searchText} onChange={(evt)=>{
                     setSearchText(evt.target.value);
                 }}></input>

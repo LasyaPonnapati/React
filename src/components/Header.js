@@ -12,7 +12,7 @@ const Header = () => {
     <div className="flex justify-between shadow-md fixed top-0 left-0 items-center pl-20 pr-10 py-2 w-screen z-50 bg-white">
 
         <div className="flex items-center">
-            <img src={require("/images/main-logo.png")}alt="logo" className="w-12 h-12"/>
+            {/* <img src={require("/images/main-logo.png")}alt="logo" className="w-12 h-12"/> */}
             <p className="px-2 font-sans text-lg">tomato</p>
         </div>
 

@@ -1,10 +1,11 @@
 import { FOODIMG_URL } from "../utils/constants";
 
 const Rescard = (props) => {
+  console.log(props);
     const { cloudinaryImageId, name, cuisines, avgRating, areaName } = props?.resData;
     //each variable holds corresponding value for furthur use in the code. 
     return (
-      <div className="transistion-all duration-200 ease-in-out 0s hover:scale-95">
+      <div data-testid="resCard" className="transistion-all duration-200 ease-in-out 0s hover:scale-95">
         <img src={`${FOODIMG_URL}${cloudinaryImageId}`} alt="food_img" className="w-72 h-48 rounded-3xl" />
         <div className="p-4">
         <h3 className="font-bold whitespace-nowrap overflow-hidden">{name}</h3>

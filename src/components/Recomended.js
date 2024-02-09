@@ -21,7 +21,7 @@ const Recomended = ({data}) => {
 
         <div>
         {showItems && itemCards.map((item,index)=>{
-            return <div key={item.card.info.id} className="m-5">
+            return <div data-testid="item" key={item.card.info.id} className="m-5">
                 <div className="flex">
                 <div className="w-10/12">
                 <h3 className="text-lg">{item.card.info.name}</h3> 

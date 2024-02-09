@@ -2,9 +2,9 @@ import { useEffect } from "react";
 
 const Contact=()=>{
     return(
-        <div className="contact">
+        <div>
             <h1>Contact us</h1>
-            <p>my number is 9801425368</p>
+            <p>my number is 0000000000</p>
         </div>
     )
 };
