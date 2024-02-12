@@ -12,6 +12,9 @@ import { useState } from "react";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
 import Cart from "./components/Cart.js";
+import CheckOut from "./components/CheckOut.js";
+import DeliveryAddress from "./components/DeliveryAddress.js";
+import Payment from "./components/Payment.js";
 
 const Grocery = lazy(()=>import("./components/Grocery.js"));
 const Cart=lazy(()=>import("./components/Cart.js"));
@@ -68,6 +71,18 @@ const Approuter=createBrowserRouter([
             {
                 path:"/cart",
                 element:<Suspense fallback="Loading..."><Cart/></Suspense>
+            },
+            {
+                path:"/checkout",
+                element:<CheckOut/>
+            },
+            {
+                path:"/deliveryAddress",
+                element:<DeliveryAddress/>
+            },
+            {
+                path:"/payment",
+                element:<Payment/>
             }
             ],
         errorElement:<Error/>

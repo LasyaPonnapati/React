@@ -17,7 +17,7 @@ const MenuItems=({data})=>{
             <p className="text-gray-500 text-sm">{item.card.info.description}</p>
             <button className="text-sm border border-green-500 rounded-lg p-1 my-2 bg-green-100 hover:bg-green-500" onClick={()=>{
                 dispatch(addItem(item));
-            }}>Add to cart</button>
+            }}> + Add to cart</button>
             </div>
 
             <div className="w-2/12">

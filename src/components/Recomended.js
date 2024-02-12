@@ -1,26 +1,36 @@
 import { useState } from "react";
 import { MENUIMG_URL } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 
 const Recomended = ({data}) => {
     // ,showItems, setExpandCategory
     const itemCards=data?.card?.card?.itemCards;
+    const cartItems=useSelector((store)=>store.cart.items);
     const[showItems, setShowItems]=useState(false);
+    const[opened,setOpened]=useState(false);
     const dispatch=useDispatch();
     return(
 
-        <div className="bg-gray-100 rounded-xl mb-5 p-3 shadow-lg" onClick={()=>{
-            setShowItems(!showItems);
-        }}>
+        <div className="bg-gray-100 rounded-xl mb-5 p-3 shadow-lg">
 
-        <div className="flex justify-between p-2 cursor-pointer">
+        <div className="flex justify-between p-2">
             <h3 className="font-bold">{data.card.card.title} ({data.card.card.itemCards.length})</h3>
-            <i className="fa-solid fa-angle-down text-black"></i>
+                {
+                    opened===true ? <i className="fa-solid fa-chevron-up text-black cursor-pointer hover:font-bold" onClick={()=>{
+                        setShowItems(!showItems);
+                        setOpened(!opened);
+                    }}></i>:
+                    <i className="fa-solid fa-chevron-down text-black cursor-pointer hover:font-bold" onClick={()=>{
+                        setShowItems(!showItems);
+                        setOpened(!opened);
+                    }}></i>
+                }
         </div>
 
         <div>
         {showItems && itemCards.map((item,index)=>{
+            const existingItem = cartItems.find(cartItem => cartItem.card.info.id === item.card.info.id);
             return <div data-testid="item" key={item.card.info.id} className="m-5">
                 <div className="flex">
                 <div className="w-10/12">
@@ -29,7 +39,7 @@ const Recomended = ({data}) => {
                 <p className="text-gray-500 text-sm">{item.card.info.description}</p>
                 <button className="text-sm border border-green-500 rounded-lg p-1 my-2 bg-green-100 hover:bg-green-500" onClick={()=>{
                     dispatch(addItem(item));
-                }}>Add to cart</button>
+                }}> + Add to cart</button>
                 </div>
                 <div className="w-2/12">
                 <img src={`${MENUIMG_URL}${item.card.info.imageId}`} alt="image not available" className="w-28 h-28 rounded-lg ml-3"/>
