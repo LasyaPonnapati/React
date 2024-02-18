@@ -1,4 +1,4 @@
-import React, {lazy,Suspense, useEffect, useState}from "react";
+import React, {lazy, Suspense, useEffect, useState}from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header.js";
 import Body from "./components/Body.js";
@@ -15,6 +15,7 @@ import Cart from "./components/Cart.js";
 import CheckOut from "./components/CheckOut.js";
 import DeliveryAddress from "./components/DeliveryAddress.js";
 import Payment from "./components/Payment.js";
+import OrderPlaced from "./components/OrderPlaced.js";
 
 const Grocery = lazy(()=>import("./components/Grocery.js"));
 const Cart=lazy(()=>import("./components/Cart.js"));
@@ -83,6 +84,10 @@ const Approuter=createBrowserRouter([
             {
                 path:"/payment",
                 element:<Payment/>
+            },
+            {
+                path:"/orderPlaced",
+                element:<OrderPlaced/>
             }
             ],
         errorElement:<Error/>

@@ -30,7 +30,6 @@ const Recomended = ({data}) => {
 
         <div>
         {showItems && itemCards.map((item,index)=>{
-            const existingItem = cartItems.find(cartItem => cartItem.card.info.id === item.card.info.id);
             return <div data-testid="item" key={item.card.info.id} className="m-5">
                 <div className="flex">
                 <div className="w-10/12">
