@@ -44,6 +44,7 @@ const Payment=()=>{
 
             </div>
                 <Link to={"/orderPlaced"}><button className="p-2 bg-gray-100 rounded-lg border border-gray-400 border-1 mr-4 mt-3">Place Order</button></Link>
+                <p className="text-sm mt-[30px] w-[800px]">Note: if you don't select any one of the payment option and click on place order then Cash on Delivery/Pay on Delivery will be the default method.</p>
         </div>
     )
 }

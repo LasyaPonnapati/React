@@ -44,15 +44,15 @@ it("should render 20 cards when clicked on ALL", async () => {
   
 });
 
-// it("should render 4 cards when clicked on ", async () => {
-//   await act(async()=>render(<BrowserRouter><Body/></BrowserRouter>));
+it("should render 0 cards when clicked on ", async () => {
+  await act(async()=>render(<BrowserRouter><Body/></BrowserRouter>));
 
-//   const ratingsBtn = screen.getByRole("button",{name:"Fast Delivery"});
-//   fireEvent.click(ratingsBtn);
-//   const cards=screen.getAllByTestId("resCard");
-//   expect(cards.length).toBe(0);
+  const ratingsBtn = screen.getByRole("button",{name:"Fast Delivery"});
+  fireEvent.click(ratingsBtn);
+  const cards=screen.getAllByTestId("resCard");
+  expect(cards.length).toBe(0);
   
-// });
+});
 
 it("should render 3 cards when clicked on American", async () => {
   await act(async()=>render(<BrowserRouter><Body/></BrowserRouter>));

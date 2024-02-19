@@ -68,7 +68,7 @@ const Body = () => {
     return list.length===0 ? <Shimmer/>:(
         <div className="py-20">
 
-            <div className="flex mx-[160px] mt-10 mb-10">
+            <div className="flex mx-[160px] my-10">
                 <input placeholder="Search for cuisine or restaurant" data-testid="searchInput" className="w-120 h-12 bg-gray-200 pl-4 mr-2 rounded-full focus:outline-none" 
                 value={searchText} onChange={(evt)=>{
                     setSearchText(evt.target.value);

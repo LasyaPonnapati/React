@@ -1,9 +1,9 @@
 const Shimmer=()=>(
     <div className="relative top-20">
 
-    <div className="flex justify-center mx-5 mt-14 mb-20">
+    <div className="flex mx-[180px] my-10">
     <div className="w-120 h-12 bg-gray-200 mr-2 rounded-full"></div>
-    <div className="bg-gray-200 w-28 h-12 rounded-full"></div>
+    <div className="bg-gray-200 w-12 rounded-3xl"></div>
     </div>
 
     <div className="grid grid-cols-4 px-36 py-6">
